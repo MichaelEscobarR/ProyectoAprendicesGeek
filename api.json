@@ -1,0 +1,56 @@
+[
+  {
+    "precio": 87800,
+    "id": 1,
+    "title": "Hidratante facial",
+    "thumbnailUrl": "./images/hydraskin-face-50-g.webp"
+  },
+  {
+    "precio": 75800,
+    "id": 2,
+    "title": "Eliminación de imperfecciones",
+    "thumbnailUrl": "./images/Hyseadc-3-regul.webp"
+  },
+  {
+    "precio": 68100,
+    "id": 3,
+    "title": "Emulsión microexfoliante",
+    "thumbnailUrl": "./images/Dermalim.webp"
+  },
+  {
+    "precio": 160800,
+    "id": 4,
+    "title": "Antioxidante pieles mixta",
+    "thumbnailUrl": "./images/Sesderma.jpg"
+  },
+  {
+    "precio": 97700,
+    "id": 5,
+    "title": "Fotoprotector ISDIN Water",
+    "thumbnailUrl": "./images/fusion-urban-2000x2000-01.jpg"
+  },
+  {
+    "precio": 78100,
+    "id": 6,
+    "title": "Cetaphil loción limpiadora piel grasa",
+    "thumbnailUrl": "./images/cetaphil.webp"
+  },
+  {
+    "precio": 115000,
+    "id": 7,
+    "title": "Crema hidratante antienvejecimiento",
+    "thumbnailUrl": "./images/Retises-CT.webp"
+  },
+  {
+    "precio": 135500,
+    "id": 8,
+    "title": "ACM cicastim crema",
+    "thumbnailUrl": "./images/acm.webp"
+  },
+  {
+    "precio": 104400,
+    "id": 9,
+    "title": "Sesderma contorno de ojos",
+    "thumbnailUrl": "./images/SesdermaCol_Angioses-Contorno-de-ojos.webp"
+  }
+]
