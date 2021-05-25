@@ -5,16 +5,28 @@ const items = document.getElementById('items')
 const footer= document.getElementById('footer')
 const templateFooter = document.getElementById('template-footer').content
 const templateCarrito = document.getElementById('template-carrito').content
-
 const fragment = document.createDocumentFragment()
 let carrito ={}
 
-document.addEventListener('DOMContentLoaded', e => { fetchData() });
+document.addEventListener('DOMContentLoaded', e => {
+    fetchData()
+
+    /* Para que no se borre el carrito cuando se actualiza  */
+    if(localStorage.getItem('carrito')){
+        carrito =JSON.parse(localStorage.getItem('carrito'))
+        pintarCarrito()
+    }
+
+ });
 
 cards.addEventListener('click', e=>{
     addCarrito(e)
 });
 
+
+items.addEventListener('click', e =>{
+    btnAcccion(e)
+})
 
 const fetchData = async () => {
     try{
@@ -78,7 +90,10 @@ const pintarCarrito = () =>{
     items.appendChild(fragment)
 
     pintarFooter()
-} 
+
+    /* Guardar información en el localStorage */
+    localStorage.setItem('carrito', JSON.stringify(carrito))
+}
 
 const pintarFooter = ()=>{
     footer.innerHTML =''
@@ -105,3 +120,23 @@ const pintarFooter = ()=>{
         pintarCarrito()
     })
 }
+
+const btnAcccion = e =>{
+    
+    if( e.target.classList.contains('btn-info')){
+        const producto = carrito[e.target.dataset.id]
+        producto.cantidad = carrito[e.target.dataset.id].cantidad+1
+        carrito[e.target.dataset.id] ={...producto}
+        pintarCarrito()
+        }
+        if( e.target.classList.contains('btn-danger')){
+            const producto = carrito[e.target.dataset.id]
+            producto.cantidad--
+            if(producto.cantidad === 0){
+                delete carrito[e.target.dataset.id]
+            }
+            pintarCarrito()
+    }
+    e.stopPropagation()
+}
+
